@@ -121,15 +121,15 @@ $user = Yii::$app->getUser()->getIdentity();
                             'items' => [
                                 [
                                     'label' => Html::tag('i', null, ['class' => 'far fa-circle nav-icon']) . ' ' . Html::tag('p', 'Пользователей'),
-                                    'url' => ['/user/admin'],
+                                    'url' => ['/user/admin/index'],
                                 ],
                                 [
                                     'label' => Html::tag('i', null, ['class' => 'far fa-circle nav-icon']) . ' ' . Html::tag('p', 'Роли'),
-                                    'url' => ['/user/admin'],
+                                    'url' => ['/user/role/index'],
                                 ],
                                 [
                                     'label' => Html::tag('i', null, ['class' => 'far fa-circle nav-icon']) . ' ' . Html::tag('p', 'Права'),
-                                    'url' => ['/rbac/roles'],
+                                    'url' => ['/user/permission/index'],
                                 ],
                             ],
                         ],

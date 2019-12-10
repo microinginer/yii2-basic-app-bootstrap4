@@ -8,16 +8,23 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'name' => 'RDMFood',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'language' => 'ru',
     'modules' => [
         'user' => [
             'class' => Da\User\Module::class,
             // ...other configs from here: [Configuration Options](installation/configuration-options.md), e.g.
             // 'generatePasswords' => true,
             // 'switchIdentitySessionKey' => 'myown_usuario_admin_user_key',
+            'administratorPermissionName' => 'admin',
+            'layout' => '@app/modules/adminable/views/layouts/main',
+            'viewPath' => '@app/views/user',
+            'enableFlashMessages' => false,
+            'enableSwitchIdentities' => true,
         ],
         'adminable' => [
             'class' => 'app\modules\adminable\Module',
