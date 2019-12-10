@@ -25,6 +25,9 @@ $config = [
             'viewPath' => '@app/views/user',
             'enableFlashMessages' => false,
             'enableSwitchIdentities' => true,
+            'controllerMap' => [
+                'security' => \app\controllers\SecurityController::class,
+            ],
         ],
         'adminable' => [
             'class' => 'app\modules\adminable\Module',
