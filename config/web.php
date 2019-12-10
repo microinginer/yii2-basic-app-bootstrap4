@@ -18,7 +18,10 @@ $config = [
             // ...other configs from here: [Configuration Options](installation/configuration-options.md), e.g.
             // 'generatePasswords' => true,
             // 'switchIdentitySessionKey' => 'myown_usuario_admin_user_key',
-        ]
+        ],
+        'adminable' => [
+            'class' => 'app\modules\adminable\Module',
+        ],
     ],
     'components' => [
         'request' => [
@@ -46,14 +49,19 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@Da/User/resources/views' => '@app/views/user'
+                ]
+            ]
+        ],
     ],
     'params' => $params,
 ];

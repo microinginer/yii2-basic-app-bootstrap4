@@ -9,5 +9,8 @@ namespace app\models\user;
  */
 class User extends \Da\User\Model\User
 {
-
+    public function getCorrectName()
+    {
+        return $this->profile->name ?: $this->username;
+    }
 }

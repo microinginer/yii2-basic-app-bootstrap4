@@ -20,7 +20,10 @@ $config = [
             // ...other configs from here: [Configuration Options](installation/configuration-options.md), e.g.
             // 'generatePasswords' => true,
             // 'switchIdentitySessionKey' => 'myown_usuario_admin_user_key',
-        ]
+        ],
+        'adminable' => [
+            'class' => 'app\modules\adminable\Module',
+        ],
     ],
     'controllerMap' => [
         'migrate' => [
