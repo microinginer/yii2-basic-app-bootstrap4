@@ -9,5 +9,5 @@
         'port' => '587',
         'encryption' => 'tls',
     ],
-    'useFileTransport' => false,
+    'useFileTransport' => !YII_ENV_DEV,
 ];

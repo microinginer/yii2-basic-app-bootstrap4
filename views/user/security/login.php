@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php ActiveForm::end(); ?>
 <hr>
 <?php if ($module->enableEmailConfirmation): ?>
-    <p class="mb-1">
+    <p class="mb-1 text-center">
         <?= Html::a(
             Yii::t('usuario', 'Didn\'t receive confirmation message?'),
             ['/user/registration/resend']
@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 <?php endif ?>
 <?php if ($module->enableRegistration): ?>
-    <p class="mb-2">
+    <p class="mb-2 text-center">
         <?= Html::a(Yii::t('usuario', 'Don\'t have an account? Sign up!'), ['/user/registration/register']) ?>
     </p>
 <?php endif ?>

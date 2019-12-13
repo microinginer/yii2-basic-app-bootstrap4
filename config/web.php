@@ -1,5 +1,9 @@
 <?php
 
+use Da\User\Controller\RecoveryController;
+use Da\User\Controller\RegistrationController;
+use Da\User\Controller\SecurityController;
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 $mailer = require __DIR__ . '/mailer.php';
@@ -23,10 +27,22 @@ $config = [
             'administratorPermissionName' => 'admin',
             'layout' => '@app/modules/adminable/views/layouts/main',
             'viewPath' => '@app/views/user',
-            'enableFlashMessages' => false,
+            'enableFlashMessages' => true,
+            'enableEmailConfirmation' => true,
             'enableSwitchIdentities' => true,
             'controllerMap' => [
-                'security' => \app\controllers\SecurityController::class,
+                'security' => [
+                    'class' => SecurityController::class,
+                    'layout' => '@app/modules/adminable/views/layouts/sign'
+                ],
+                'registration' => [
+                    'class' => RegistrationController::class,
+                    'layout' => '@app/modules/adminable/views/layouts/sign'
+                ],
+                'recovery' => [
+                    'class' => RecoveryController::class,
+                    'layout' => '@app/modules/adminable/views/layouts/sign'
+                ]
             ],
         ],
         'adminable' => [

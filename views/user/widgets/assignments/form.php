@@ -10,6 +10,7 @@
  */
 
 use dosamigos\selectize\SelectizeDropDownList;
+use kartik\select2\Select2;
 use yii\bootstrap\Alert;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -45,9 +46,9 @@ use yii\widgets\ActiveForm;
 <?= Html::activeHiddenInput($model, 'user_id') ?>
 
 <?= $form->field($model, 'items')->widget(
-    SelectizeDropDownList::class,
+    Select2::class,
     [
-        'items' => $availableItems,
+        'data' => $availableItems,
         'options' => [
             'id' => 'children',
             'multiple' => true,

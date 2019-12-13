@@ -12,7 +12,7 @@
 /**
  * @var yii\web\View
  * @var \Da\User\Module $module
- * @var string          $title
+ * @var string $title
  */
 
 $this->title = $title;
@@ -25,3 +25,5 @@ $this->title = $title;
         'module' => $module,
     ]
 );
+
+echo \yii\bootstrap4\Html::a('Перейти на сайт', ['/'], ['class' => 'btn btn-success btn-block']);

@@ -9,12 +9,12 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-use yii\bootstrap\ActiveForm;
-use yii\bootstrap\Nav;
+use yii\bootstrap4\ActiveForm;
+use yii\bootstrap4\Nav;
 use yii\helpers\Html;
 
 /**
- * @var yii\web\View        $this
+ * @var yii\web\View $this
  * @var \Da\User\Model\User $user
  */
 
@@ -33,20 +33,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="row">
     <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
-            </div>
-            <div class="panel-body">
+        <div class="card card-default">
+            <div class="card-body">
                 <?= $this->render('/shared/_menu') ?>
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
+                        <div class="card card-default">
+                            <div class="card-body">
                                 <?= Nav::widget(
                                     [
                                         'options' => [
-                                            'class' => 'nav-pills nav-stacked',
+                                            'class' => 'nav flex-column nav-pills',
                                         ],
                                         'items' => [
                                             [
@@ -74,8 +71,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
+                        <div class="card card-default">
+                            <div class="card-body">
                                 <div class="alert alert-info">
                                     <?= Yii::t('usuario', 'Credentials will be sent to the user by email') ?>.
                                     <?= Yii::t(
@@ -91,6 +88,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         'fieldConfig' => [
                                             'horizontalCssClasses' => [
                                                 'wrapper' => 'col-sm-9',
+                                                'label' => 'col-sm-3',
                                             ],
                                         ],
                                     ]
@@ -99,11 +97,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?= $this->render('/admin/_user', ['form' => $form, 'user' => $user]) ?>
 
                                 <div class="form-group">
-                                    <div class="col-lg-offset-3 col-lg-9">
-                                        <?= Html::submitButton(
-                                            Yii::t('usuario', 'Save'),
-                                            ['class' => 'btn btn-block btn-success']
-                                        ) ?>
+                                    <div class="row justify-content-md-end">
+                                        <div class="col-lg-9">
+                                            <?= Html::submitButton(
+                                                Yii::t('usuario', 'Save'),
+                                                ['class' => 'btn btn-block btn-success']
+                                            ) ?>
+                                        </div>
                                     </div>
                                 </div>
 

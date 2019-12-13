@@ -28,9 +28,6 @@ use yii\helpers\Html;
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">
-                <h3 class="card-title"><?= Html::encode($this->title) ?></h3>
-            </div>
             <div class="card-body">
                 <?= $this->render('/shared/_menu') ?>
                 <?= $content ?>

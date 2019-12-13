@@ -35,6 +35,9 @@ $this->registerJs("$(function () {
     </div>
     <!-- /.login-logo -->
     <div class="card">
+        <div class="card-header">
+            <?= $this->title ?>
+        </div>
         <div class="card-body login-card-body">
             <?= $content ?>
         </div>
