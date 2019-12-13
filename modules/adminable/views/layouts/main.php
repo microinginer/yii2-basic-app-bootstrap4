@@ -75,7 +75,7 @@ $user = Yii::$app->getUser()->getIdentity();
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">Мой профиль</a>
+                        <a href="<?= Url::to(['/user/settings'])?>" class="btn btn-default btn-flat">Настройки</a>
                         <a href="<?= Url::to(['/user/logout'])?>" data-method="post" class="btn btn-default btn-flat float-right">Выйти</a>
                     </li>
                 </ul>
@@ -100,7 +100,7 @@ $user = Yii::$app->getUser()->getIdentity();
                          alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><?= $user->getCorrectName()?></a>
+                    <a href="<?= Url::to(['/user/profile'])?>" class="d-block"><?= $user->getCorrectName()?></a>
                 </div>
             </div>
             <nav class="mt-2">

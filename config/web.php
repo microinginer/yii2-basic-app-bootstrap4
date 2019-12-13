@@ -48,7 +48,15 @@ $config = [
                 'recovery' => [
                     'class' => RecoveryController::class,
                     'layout' => '@app/modules/adminable/views/layouts/sign'
-                ]
+                ],
+                'settings' => [
+                    'class' => \Da\User\Controller\SettingsController::class,
+                    'layout' => '@app/views/layouts/main'
+                ],
+                'profile' => [
+                    'class' => \Da\User\Controller\ProfileController::class,
+                    'layout' => '@app/views/layouts/main'
+                ],
             ],
         ],
         'adminable' => [

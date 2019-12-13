@@ -12,6 +12,9 @@ use yii\bootstrap4\ActiveForm;
 use yii\helpers\Html;
 
 /* @var $model \Da\User\Form\GdprDeleteForm */
+$this->title = 'Удалить аккаунт';
+$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 
 <div class="row justify-content-md-center">
