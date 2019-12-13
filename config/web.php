@@ -32,6 +32,7 @@ $config = [
             'enableEmailConfirmation' => true,
             'enableSwitchIdentities' => true,
             'enableGdprCompliance' => true,
+            'gdprPrivacyPolicyUrl' => ['/site/privacy'],
             'classMap' => [
                 'User' => \app\models\user\User::class,
             ],
