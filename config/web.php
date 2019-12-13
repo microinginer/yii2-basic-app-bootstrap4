@@ -12,12 +12,13 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'name' => 'RDMFood',
+    'name' => Yii::t('app', 'My application'),
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'language' => 'ru',
+    'sourceLanguage' => 'ru-RU',
     'modules' => [
         'user' => [
             'class' => Da\User\Module::class,
