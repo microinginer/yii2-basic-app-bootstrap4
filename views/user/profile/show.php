@@ -12,17 +12,17 @@
 use yii\helpers\Html;
 
 /**
- * @var \yii\web\View          $this
+ * @var \yii\web\View $this
  * @var \Da\User\Model\Profile $profile
  */
 
-$this->title = empty($profile->name) ? Html::encode($profile->user->username) : Html::encode($profile->name);
+$this->title = $profile->user->getCorrectName();
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
+    <div class="col-md-3 col-xs-12">
+        <div class="card">
+            <div class="card-body">
                 <?= Html::img(
                     $profile->getAvatarUrl(230),
                     [
@@ -31,8 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ) ?>
             </div>
-            <div class="col-sm-6 col-md-8">
-                <h4><?= $this->title ?></h4>
+        </div>
+    </div>
+    <div class="col-md-9 col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title"><?= $this->title ?></h1>
+            </div>
+            <div class="card-body">
                 <ul style="padding: 0; list-style: none outside none;">
                     <?php if (!empty($profile->location)): ?>
                         <li>
@@ -69,3 +75,4 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+

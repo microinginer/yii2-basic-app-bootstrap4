@@ -12,13 +12,13 @@
 use Da\User\Helper\TimezoneHelper;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /**
- * @var yii\web\View           $this
+ * @var yii\web\View $this
  * @var yii\widgets\ActiveForm $form
  * @var \Da\User\Model\Profile $model
- * @var TimezoneHelper         $timezoneHelper
+ * @var TimezoneHelper $timezoneHelper
  */
 
 $this->title = Yii::t('usuario', 'Profile settings');
@@ -35,22 +35,23 @@ $timezoneHelper = $model->make(TimezoneHelper::class);
         <?= $this->render('_menu') ?>
     </div>
     <div class="col-md-9">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title"><?= Html::encode($this->title) ?></h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <?php $form = ActiveForm::begin(
                     [
                         'id' => $model->formName(),
                         'options' => ['class' => 'form-horizontal'],
+                        'layout' => 'horizontal',
                         'fieldConfig' => [
-                            'template' => "{label}\n<div class=\"col-lg-9\">{input}</div>\n<div class=\"col-sm-offset-3 col-lg-9\">{error}\n{hint}</div>",
-                            'labelOptions' => ['class' => 'col-lg-3 control-label'],
+                            'horizontalCssClasses' => [
+                                'wrapper' => 'col-sm-9',
+                                'label' => 'col-sm-3',
+                            ],
                         ],
                         'enableAjaxValidation' => true,
-                        'enableClientValidation' => false,
-                        'validateOnBlur' => false,
                     ]
                 ); ?>
 
@@ -79,9 +80,11 @@ $timezoneHelper = $model->make(TimezoneHelper::class);
                 <?= $form->field($model, 'bio')->textarea() ?>
 
                 <div class="form-group">
-                    <div class="col-lg-offset-3 col-lg-9">
-                        <?= Html::submitButton(Yii::t('usuario', 'Save'), ['class' => 'btn btn-block btn-success']) ?>
-                        <br>
+                    <div class="row justify-content-md-end">
+                        <div class="col-lg-9">
+                            <?= Html::submitButton(Yii::t('usuario', 'Save'), ['class' => 'btn btn-block btn-success']) ?>
+                            <br>
+                        </div>
                     </div>
                 </div>
 

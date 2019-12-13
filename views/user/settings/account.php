@@ -11,7 +11,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
 /**
  * @var yii\web\View               $this
@@ -34,21 +34,24 @@ $module = Yii::$app->getModule('user');
         <?= $this->render('/settings/_menu') ?>
     </div>
     <div class="col-md-9">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title"><?= Html::encode($this->title) ?></h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <?php $form = ActiveForm::begin(
+
                     [
                         'id' => $model->formName(),
                         'options' => ['class' => 'form-horizontal'],
+                        'layout' => 'horizontal',
                         'fieldConfig' => [
-                            'template' => "{label}\n<div class=\"col-lg-9\">{input}</div>\n<div class=\"col-sm-offset-3 col-lg-9\">{error}\n{hint}</div>",
-                            'labelOptions' => ['class' => 'col-lg-3 control-label'],
+                            'horizontalCssClasses' => [
+                                'wrapper' => 'col-sm-9',
+                                'label' => 'col-sm-3',
+                            ],
                         ],
                         'enableAjaxValidation' => true,
-                        'enableClientValidation' => false,
                     ]
                 ); ?>
 
@@ -63,9 +66,11 @@ $module = Yii::$app->getModule('user');
                 <?= $form->field($model, 'current_password')->passwordInput() ?>
 
                 <div class="form-group">
-                    <div class="col-lg-offset-3 col-lg-9">
+                    <div class="row justify-content-md-end">
+                        <div class="col-lg-9">
                         <?= Html::submitButton(Yii::t('usuario', 'Save'), ['class' => 'btn btn-block btn-success']) ?>
                         <br>
+                    </div>
                     </div>
                 </div>
 
@@ -94,11 +99,11 @@ $module = Yii::$app->getModule('user');
                     </div>
                 </div>
             </div>
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?= Yii::t('usuario', 'Two Factor Authentication (2FA)') ?></h3>
+            <div class="card card-info">
+                <div class="card-heading">
+                    <h3 class="card-title"><?= Yii::t('usuario', 'Two Factor Authentication (2FA)') ?></h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>
                         <?= Yii::t('usuario', 'Two factor authentication protects you in case of stolen credentials') ?>.
                     </p>
@@ -128,11 +133,11 @@ $module = Yii::$app->getModule('user');
             </div>
         <?php endif; ?>
         <?php if ($model->module->allowAccountDelete): ?>
-            <div class="panel panel-danger">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?= Yii::t('usuario', 'Delete account') ?></h3>
+            <div class="card card-danger">
+                <div class="card-heading">
+                    <h3 class="card-title"><?= Yii::t('usuario', 'Delete account') ?></h3>
                 </div>
-                <div class="panel-body">
+                <div class="card-body">
                     <p>
                         <?= Yii::t('usuario', 'Once you delete your account, there is no going back') ?>.
                         <?= Yii::t('usuario', 'It will be deleted forever') ?>.

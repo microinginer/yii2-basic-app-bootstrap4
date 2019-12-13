@@ -8,21 +8,21 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use yii\helpers\Html;
 
 /* @var $model \Da\User\Form\GdprDeleteForm */
 ?>
 
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-danger">
-            <div class="panel-heading">
-                <h3 class="panel-title">
+<div class="row justify-content-md-center">
+    <div class="col-md-6">
+        <div class="card card-danger">
+            <div class="card-header">
+                <h3 class="card-title">
                     <?= Yii::t('usuario', 'Delete personal data') ?>
                 </h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <p><?= Yii::t('usuario', 'You are about to delete all your personal data from this site.') ?></p>
                 <p class="text-danger">
                     <?= Yii::t(
@@ -35,12 +35,12 @@ use yii\helpers\Html;
                 $form = ActiveForm::begin([])
                 ?>
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <?= $form->field($model, 'password')->passwordInput() ?>
+                    <div class="col-md-9">
+                        <?= $form->field($model, 'password')->label(false)->passwordInput([
+                            'placeholder' => 'Текущий пароль'
+                        ]) ?>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-3">
                         <?= Html::submitButton(Yii::t('usuario', 'Delete'), ['class' => 'btn btn-danger']) ?>
                     </div>
                 </div>

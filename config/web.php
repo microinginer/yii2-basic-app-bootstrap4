@@ -31,6 +31,10 @@ $config = [
             'enableFlashMessages' => true,
             'enableEmailConfirmation' => true,
             'enableSwitchIdentities' => true,
+            'enableGdprCompliance' => true,
+            'classMap' => [
+                'User' => \app\models\user\User::class,
+            ],
             'controllerMap' => [
                 'security' => [
                     'class' => SecurityController::class,
