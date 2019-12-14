@@ -30,6 +30,7 @@ $config = [
             'class' => \yii\console\controllers\MigrateController::class,
             'migrationPath' => [
                 '@app/migrations',
+                '@app/migrations/smsRegistration',
                 '@yii/rbac/migrations', // Just in case you forgot to run it on console (see next note)
             ],
             'migrationNamespaces' => [

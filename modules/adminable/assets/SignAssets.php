@@ -19,14 +19,14 @@ class SignAssets extends AssetBundle
      * @var array
      */
     public $css = [
-        'adminlte/plugins/iCheck/all.css',
+        'adminlte/plugins/icheck-bootstrap/icheck-bootstrap.css',
     ];
 
     /**
      * @var array
      */
     public $js = [
-        'adminlte/plugins/iCheck/icheck.min.js',
+
     ];
 
     /**

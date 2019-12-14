@@ -19,7 +19,7 @@ class DefaultController extends Controller
                     [
                         'actions' => ['index'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['admin'],
                     ],
                 ],
             ],

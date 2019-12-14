@@ -1,7 +1,7 @@
 <?php
 
-use Da\User\Controller\RecoveryController;
-use Da\User\Controller\RegistrationController;
+use app\controllers\RegistrationController;
+use app\controllers\RecoveryController;
 use Da\User\Controller\SecurityController;
 
 $params = require __DIR__ . '/params.php';

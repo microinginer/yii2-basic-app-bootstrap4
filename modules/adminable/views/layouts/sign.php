@@ -9,13 +9,6 @@ use app\modules\adminable\assets\SignAssets;
 use yii\helpers\Url;
 
 SignAssets::register($this);
-$this->registerJs("$(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
-  });");
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
