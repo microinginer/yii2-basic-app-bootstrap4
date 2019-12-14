@@ -125,13 +125,15 @@ if (YII_ENV_DEV) {
                 'class' => 'yii\gii\generators\crud\Generator',
                 'templates' => [
                     'appCrud' => '@app/gii/crud/default',
-                ]
+                ],
+                'template' => 'appCrud',
             ],
             'model' => [
                 'class' => 'yii\gii\generators\model\Generator',
                 'templates' => [
                     'appModel' => '@app/gii/model/default',
-                ]
+                ],
+                'template' => 'appModel',
             ],
         ],
     ];
