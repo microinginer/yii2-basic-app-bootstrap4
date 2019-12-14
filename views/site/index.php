@@ -15,7 +15,7 @@ $this->title = 'My App';
                     <small><a href="<?= Url::to(['/user/login']) ?>">Войти</a></small>
                     <small><a href="<?= Url::to(['/user/register']) ?>">Зарегистрироваться</a></small>
                 <?php else: ?>
-                    <small><a href="<?= Url::to(['/adminable']) ?>">Панель управления</a></small>
+                    <small><a href="<?= Url::to(['/user/profile']) ?>">Панель управления</a></small>
                     <small><a href="<?= Url::to(['/user/logout']) ?>" data-method="post">Выйти</a></small>
                 <?php endif; ?>
             </h1>
