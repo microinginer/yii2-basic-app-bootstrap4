@@ -32,7 +32,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="card-header">
             <h1 class="card-title"><?= "<?= " ?>Html::encode($this->title) ?></h1>
             <div class="card-tools">
-                <?= "<?= " ?>Html::a(<?= $generator->generateString('Create ' . Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>, ['create'], ['class' => 'btn btn-success']) ?>
+                <div class="input-group input-group-sm">
+                    <?= "<?= " ?>Html::a(<?= $generator->generateString('Create ' . Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>, ['create'], ['class' => 'btn btn-sm btn-success']) ?>
+                </div>
             </div>
         </div>
 <?php if ($generator->indexWidgetType === 'grid'): ?>
