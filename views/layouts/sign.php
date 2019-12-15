@@ -5,7 +5,7 @@
  */
 
 use yii\bootstrap\Html;
-use app\modules\adminable\assets\SignAssets;
+use app\assets\SignAssets;
 use yii\helpers\Url;
 
 SignAssets::register($this);

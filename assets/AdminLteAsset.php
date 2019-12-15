@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\modules\adminable\assets;
+namespace app\assets;
 
 
 use yii\web\AssetBundle;

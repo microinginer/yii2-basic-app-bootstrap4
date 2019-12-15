@@ -3,6 +3,7 @@
 namespace app\modules\adminable\assets;
 
 
+use app\assets\AdminLteAsset;
 use yii\web\AssetBundle;
 
 /**

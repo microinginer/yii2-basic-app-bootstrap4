@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\adminable\assets;
+namespace app\assets;
 
 use yii\web\AssetBundle;
 
@@ -33,6 +33,6 @@ class SignAssets extends AssetBundle
      * @var array
      */
     public $depends = [
-        'app\modules\adminable\assets\AdminLteAsset',
+        'app\assets\AdminLteAsset',
     ];
 }

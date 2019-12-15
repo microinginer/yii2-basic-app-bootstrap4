@@ -4,9 +4,9 @@
 
 /* @var $content string */
 
+use app\assets\AdminLteAsset;
 use app\models\user\User;
 use app\modules\adminable\assets\AdminableAsset;
-use app\modules\adminable\assets\AdminLteAsset;
 use app\modules\adminable\widgets\MenuWidget;
 use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\Html;

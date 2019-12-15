@@ -2,7 +2,10 @@
 
 use app\controllers\RegistrationController;
 use app\controllers\RecoveryController;
+use app\models\user\User;
+use Da\User\Controller\ProfileController;
 use Da\User\Controller\SecurityController;
+use Da\User\Controller\SettingsController;
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -34,27 +37,27 @@ $config = [
             'enableGdprCompliance' => true,
             'gdprPrivacyPolicyUrl' => ['/site/privacy'],
             'classMap' => [
-                'User' => \app\models\user\User::class,
+                'User' => User::class,
             ],
             'controllerMap' => [
                 'security' => [
                     'class' => SecurityController::class,
-                    'layout' => '@app/modules/adminable/views/layouts/sign'
+                    'layout' => '@app/views/layouts/sign'
                 ],
                 'registration' => [
                     'class' => RegistrationController::class,
-                    'layout' => '@app/modules/adminable/views/layouts/sign'
+                    'layout' => '@app/views/layouts/sign'
                 ],
                 'recovery' => [
                     'class' => RecoveryController::class,
-                    'layout' => '@app/modules/adminable/views/layouts/sign'
+                    'layout' => '@app/views/layouts/sign'
                 ],
                 'settings' => [
-                    'class' => \Da\User\Controller\SettingsController::class,
+                    'class' => SettingsController::class,
                     'layout' => '@app/views/layouts/main'
                 ],
                 'profile' => [
-                    'class' => \Da\User\Controller\ProfileController::class,
+                    'class' => ProfileController::class,
                     'layout' => '@app/views/layouts/main'
                 ],
             ],
