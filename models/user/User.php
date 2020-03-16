@@ -26,11 +26,6 @@ class User extends \Da\User\Model\User
                 'updatedAtAttribute' => 'updated_at',
                 'value' => (new \DateTime())->format('Y-m-d H:i:s'),
             ],
-            [
-                'class' => BlameableBehavior::class,
-                'createdByAttribute' => 'created_by',
-                'updatedByAttribute' => 'updated_by',
-            ],
         ];
     }
 
