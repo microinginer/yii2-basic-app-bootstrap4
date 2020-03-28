@@ -24,9 +24,9 @@ class BackupController extends Controller
         $this->password = Yii::$app->getDb()->password;
 
         $dsn = explode(';', Yii::$app->getDb()->dsn);
-        $this->host = substr($dsn[0], strrpos($dsn[0], 'host=') + 5);
+        $this->host = getenv('DB_HOST');
 
-        $this->dbname = substr($dsn[1], strrpos($dsn[0], 'dbname=') + 7);
+        $this->dbname = getenv('DB_NAME');
     }
 
     public function actionIndex()
@@ -64,8 +64,8 @@ class BackupController extends Controller
     public function actionSendMail($filename)
     {
         $message = Yii::$app->mailer->compose()
-            ->setFrom(['ruslanmadatov@gmail.com' => 'Database backup'])
-            ->setTo(['ruslanmadatov@yandex.ru', 'megajasha@gmail.com'])
+            ->setFrom([getenv('SMTP_LOGIN') => 'Database backup'])
+            ->setTo([Yii::$app->params['adminEmail']])
             ->setSubject('DataBase Backup ' . date('d.m.Y'))
             ->setHtmlBody('<h1>Database backup</h1>');
 
