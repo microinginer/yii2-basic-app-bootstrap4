@@ -6,7 +6,7 @@
 //print_r(__DIR__);
 //die();
 
-$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
 $dotenv->load();
 
 defined('YII_DEBUG') or define('YII_DEBUG', getenv('YII_DEBUG') === 'true');
